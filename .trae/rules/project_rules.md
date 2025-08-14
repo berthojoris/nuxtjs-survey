@@ -29,6 +29,14 @@ You are an **expert web developer**, highly skilled in:
 
 ---
 
+## 🎨 UI & Styling Rules
+- **UI Library:** All layouts, templates, and components must use **Shadcn UI**.
+- Maintain a **consistent design system** by leveraging Shadcn UI's components and styles.
+- Customize Shadcn UI themes via configuration to match project branding.
+- Avoid mixing multiple UI libraries unless explicitly required.
+
+---
+
 ## 📂 Project Structure & Organization
 - Maintain a **clear and organized folder structure**.
 - Use **conventional naming** for files and directories.
