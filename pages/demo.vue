@@ -20,15 +20,15 @@
           </div>
 
           <!-- Progress Bar -->
-          <div class="mb-8">
+          <div class="mb-8" v-if="currentQuestion <= totalQuestions">
             <div class="flex justify-between text-sm text-gray-600 mb-2">
               <span>Progress</span>
-              <span>{{ Math.round((currentQuestion / totalQuestions) * 100) }}%</span>
+              <span>{{ progressPercentage }}%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2">
               <div 
                 class="bg-blue-600 h-2 rounded-full transition-all duration-300" 
-                :style="{ width: (currentQuestion / totalQuestions) * 100 + '%' }"
+                :style="{ width: progressPercentage + '%' }"
               ></div>
             </div>
           </div>
@@ -255,6 +255,11 @@ useHead({
 // Demo state
 const currentQuestion = ref(1)
 const totalQuestions = 4
+
+// Computed properties
+const progressPercentage = computed(() => {
+  return Math.min(Math.round((currentQuestion.value / totalQuestions) * 100), 100)
+})
 
 const answers = ref({
   rating: '',
